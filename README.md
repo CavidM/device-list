@@ -8,7 +8,7 @@ git clone https://github.com/CavidM/device-list
 ```bash
 docker-compose up --build
 ```
-Application starts on port 3000
+Application starts on port 3000. Change the code to see the result without rerunning commands.
 
 #
 Application uses socket session based authentication to avoid sending message to the same user by identifying users with socket.id
