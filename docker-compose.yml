@@ -1,0 +1,42 @@
+version: '3'
+services:
+  nextjs_app:
+    build:
+      context: ./ui
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+    volumes:
+      - type: bind
+        source: ./ui
+        target: /app
+  express_app:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+      - "3002:3002"
+    networks:
+      - app-network
+    volumes:
+      - type: bind
+        source: ./api
+        target: /app
+  postgres_db:
+    container_name: postgres_db
+    image: postgres:13-alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_DB=device-list
+    ports:
+      - "5433:5432"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

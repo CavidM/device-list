@@ -1,0 +1,5 @@
+export default Object.freeze({
+    INVALID_AUTHENTICATION_CREDENTIALS: 11,
+    DEVICE_NOT_FOUND: 12,
+    EMPTY_STOCK: 13,
+})

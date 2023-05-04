@@ -1,0 +1,9 @@
+.quantity :global .label {
+  margin-right: 15px;
+}
+.quantity :global .value {
+  display: inline-block;
+  border: 1px solid;
+  padding: 1px 5px 1px 10px;
+  border-radius: 5px;
+}
