@@ -21,3 +21,7 @@ For client side state management uses [ReduxToolkit](https://redux-toolkit.js.or
 
 
 The server app has a multi tier architecture with Request controller, Business logic layer and Data access layer with Entities and Repositories [TypeORM](https://typeorm.io/)
+
+#
+### Resolved issues during development
+- [https://github.com/apollographql/apollo-client/issues/10827](https://github.com/apollographql/apollo-client/issues/10827)
