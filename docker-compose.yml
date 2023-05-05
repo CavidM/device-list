@@ -10,8 +10,8 @@ services:
       - app-network
     volumes:
       - type: bind
-        source: ./ui
-        target: /app
+        source: ./ui/src
+        target: /app/src
   express_app:
     build:
       context: ./api
@@ -23,8 +23,8 @@ services:
       - app-network
     volumes:
       - type: bind
-        source: ./api
-        target: /app
+        source: ./api/src
+        target: /app/src
   postgres_db:
     container_name: postgres_db
     image: postgres:13-alpine
