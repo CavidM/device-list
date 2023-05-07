@@ -29,8 +29,6 @@ export const cartSlice = createSlice({
       else {
         state!.items[deviceId] = 1;
       }
-
-      console.log('state: ', state)
     },
     actionRemoveFromCart: (state, action: PayloadAction<PayloadActionProps>) => {
       const { deviceId } = action.payload;

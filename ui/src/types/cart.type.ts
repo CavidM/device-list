@@ -3,3 +3,9 @@ export interface CartAddMutationType {
     deviceLeft: number
   }
 }
+
+export interface CartRemoveMutationType {
+  removeFromCart: {
+    deviceLeft: number
+  }
+}

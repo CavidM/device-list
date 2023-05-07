@@ -7,8 +7,10 @@ import { actionRemoveFromCart } from "@dl/store/cart";
 import { useAppSelector } from "@dl/hooks/useAppSelector";
 import { enqueueSnackbar } from "notistack";
 
+export const MUTATION_NAME_REMOVE_FROM_CART = 'RemoveFromCart'
+
 const MutationRemoveFromCart = gql`
-  mutation RemoveFromCartCart($deviceId: Int!) {
+  mutation ${MUTATION_NAME_REMOVE_FROM_CART}($deviceId: Int!) {
     removeFromCart(deviceId: $deviceId) {
       deviceLeft
     }

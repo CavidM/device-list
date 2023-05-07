@@ -3,7 +3,7 @@ import '@dl/styles/globals.css'
 import type { AppProps } from 'next/app'
 import { ApolloProvider } from "@apollo/client";
 import client from "../config/graphql-client";
-import { SnackbarProvider, useSnackbar } from 'notistack'
+import { SnackbarProvider } from 'notistack'
 import { ClientOnly } from '@dl/components/ClientOnly';
 import { useEffect } from 'react';
 import { initSocket } from '@dl/services/web-socket';

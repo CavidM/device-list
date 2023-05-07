@@ -9,10 +9,12 @@ export const Navbar = () => {
   return (
     <div className="d-flex justify-content-between">
       <h4>Test application</h4>
-  
+
       <div className={styles.quantity}>
         <span className='label'>Total in cart:</span>
-        <span className='value'>{quantity} item(s)</span></div>
+        <span className='value'>
+          <span data-testid='total-quantity'>{quantity}</span> item(s)
+        </span></div>
     </div>
   )
 }

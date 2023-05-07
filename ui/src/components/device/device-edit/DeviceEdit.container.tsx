@@ -4,8 +4,10 @@ import { useQuery, gql, NetworkStatus } from "@apollo/client";
 import { DeviceGetType } from "@dl/types/device.type";
 import { useAppSelector } from "@dl/hooks/useAppSelector";
 
+export const QUERY_NAME_GET_DEVICE = 'GetDevice'
+
 export const QUERY_GET_DEVICE = gql`
-  query GetDevice($id: Int!) {
+  query ${QUERY_NAME_GET_DEVICE}($id: Int!) {
     getDevice(id: $id) {
         id,
         title,

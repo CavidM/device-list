@@ -3,8 +3,10 @@ import { useQuery, gql } from "@apollo/client";
 import { DeviceList } from "./DeviceList";
 import { DeviceListGetType } from "@dl/types/device.type";
 
+export const QUERY_NAME_GET_DEVICE_LIST = 'GetDeviceList'
+
 export const QUERY_DEVICE_LIST = gql`
-  query {
+  query ${QUERY_NAME_GET_DEVICE_LIST} {
     deviceList {
         id,
         title,

@@ -9,8 +9,10 @@ import { useEffect, useState } from "react";
 import { useAppDispatch } from "@dl/store";
 import { actionAddToCart } from "@dl/store/cart";
 
+export const MUTATION_NAME_ADD_TO_CART = 'AddToCart'
+
 const MutationAddToCart = gql`
-  mutation AddToCart($deviceId: Int!) {
+  mutation ${MUTATION_NAME_ADD_TO_CART}($deviceId: Int!) {
     addToCart(deviceId: $deviceId) {
       deviceLeft
     }
@@ -48,7 +50,7 @@ export const DeviceCartAdd = () => {
       console.log(JSON.parse(JSON.stringify(error)))
     },
     onCompleted: () => {
-      dispatch(actionAddToCart({deviceId: device}))
+      dispatch(actionAddToCart({ deviceId: device }))
     }
   })
 

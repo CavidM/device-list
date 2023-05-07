@@ -45,7 +45,8 @@ export const DeviceEditHtml: FC<DeviceEditHtmlProps> = ({
           <DeviceCart />
 
           <div className="fs-5">
-            this items in cart: {itemsInCart}
+            this items in cart:
+            <span data-testid="item-quantity">{itemsInCart}</span>
           </div>
         </div>
 
