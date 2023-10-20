@@ -3,6 +3,8 @@ import DeviceBll from "../bll/DeviceBll";
 import BaseController from "./BaseController";
 import DeviceRepository from "../dal/DeviceRepository";
 import { IContext } from "../types/graphql/IGraphql";
+import UserError from "../utils/UserError";
+import errors from "../utils/http-response/errors";
 
 export default class DeviceController extends BaseController {
     protected bll: DeviceBll;
@@ -30,10 +32,24 @@ export default class DeviceController extends BaseController {
             await new Promise((res) => {
                 setTimeout(() => { res(1) }, 1000)
             })
-            return await this.bll.deviceDal.findOne(id);
+
+            const device = await this.bll.deviceDal.findOne(id)
+
+            if (device) {
+                return {
+                    __typename: 'Device',
+                    ...device
+                }
+            }
+
+            throw new UserError(errors.DEVICE_NOT_FOUND)
+
         }
         catch (e) {
-            this.catchError(e);
+            return {
+                __typename: 'Error',
+                ...this.catchError(e)
+            }
         }
     }
 }

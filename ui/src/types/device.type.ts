@@ -1,3 +1,4 @@
+import { HttpRequestError } from "./http-client.type"
 
 export interface DeviceProps {
   id?: number
@@ -5,10 +6,11 @@ export interface DeviceProps {
   description?: string
   price?: number
   quantity?: number
+  __typename?: string
 }
 
 export interface DeviceGetType {
-  getDevice: DeviceProps
+  getDevice: DeviceProps & HttpRequestError
 }
 
 export interface DeviceListGetType {

@@ -42,7 +42,7 @@ export default class BaseController implements IBaseController {
             else if (e.errors)
                 this.validation.addErrors(e.errors);
 
-            return this.validation;
+            return this.validation.errors[0];
         } else
             this.logger.error(e);
     }
