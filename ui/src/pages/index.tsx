@@ -6,11 +6,10 @@ import { Navbar } from '@dl/components/navbar/Navbar'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-
   return (
     <main className={`${inter.className} container-lg`}>
       <div className='pt-3'>
-      <Navbar />
+        <Navbar />
       </div>
       <div className='pt-5'>
         <Device />
