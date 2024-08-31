@@ -16,8 +16,7 @@ export const Modal: FC<ModalProps> = ({
   modalTitle,
   ...rest
 }) => {
-
-  const [show, setShow] = useState(isActive);
+  const [show] = useState(isActive);
 
   return (
     <BModal
@@ -39,5 +38,5 @@ export const Modal: FC<ModalProps> = ({
         </Button>
       </BModal.Footer>
     </BModal>
-  )
-}
+  );
+};

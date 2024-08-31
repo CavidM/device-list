@@ -1,18 +1,17 @@
-import { FC } from "react";
-import { DeviceListItem } from "../device-list-item/DeviceListItem";
+import { FC } from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
-import { DeviceListHeader } from "./DeviceListHeader";
-import { DeviceProps } from "@dl/types/device.type";
+import { DeviceProps } from '@dl/types/device.type';
+import { DeviceListItem } from '../device-list-item/DeviceListItem';
+import { DeviceListHeader } from './DeviceListHeader';
 
 export const DeviceList: FC<{ data?: DeviceProps[] }> = ({ data }) => (
   <>
     <DeviceListHeader />
     <ListGroup>
       {
-        data?.map(item => <DeviceListItem {...item} key={item.id} />)
+        data?.map((item) => <DeviceListItem {...item} key={item.id} />)
       }
     </ListGroup>
   </>
-)
 
-
+);

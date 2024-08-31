@@ -3,9 +3,8 @@ import { useDispatch } from 'react-redux';
 import cart from './cart';
 
 const rootReducer = combineReducers({
-  cart: cart,
+  cart,
 });
-
 
 export const store = configureStore({
   reducer: rootReducer,

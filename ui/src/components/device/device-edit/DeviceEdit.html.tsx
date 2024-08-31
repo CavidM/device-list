@@ -1,13 +1,12 @@
-import { FC } from "react"
-import styles from './DeviceEdit.module.css'
-import { DeviceProps } from "@dl/types/device.type";
-import { DeviceCart } from "../device-cart/DeviceCart";
+import { FC } from 'react';
+import { DeviceProps } from '@dl/types/device.type';
+import styles from './DeviceEdit.module.css';
+import { DeviceCart } from '../device-cart/DeviceCart';
 
 interface DeviceEditHtmlProps extends DeviceProps {
   quantityUpdates: boolean
   itemsInCart: number
 }
-
 
 export const DeviceEditHtml: FC<DeviceEditHtmlProps> = ({
   id,
@@ -16,16 +15,19 @@ export const DeviceEditHtml: FC<DeviceEditHtmlProps> = ({
   price,
   quantity,
   quantityUpdates,
-  itemsInCart
+  itemsInCart,
 }) => {
-
-  const quantityClassname = `${styles.quantity} ${quantityUpdates ? styles.quantityLoads : ''}`
+  const quantityClassname = `${styles.quantity} ${quantityUpdates ? styles.quantityLoads : ''}`;
 
   return (
     <>
       <div className="d-flex justify-content-between mb-4">
 
-        <h4><small>#id:</small> {id}</h4>
+        <h4>
+          <small>#id:</small>
+          {' '}
+          {id}
+        </h4>
 
         <h3>{title}</h3>
 
@@ -53,4 +55,4 @@ export const DeviceEditHtml: FC<DeviceEditHtmlProps> = ({
       </div>
     </>
   );
-}
+};

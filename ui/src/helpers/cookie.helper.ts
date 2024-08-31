@@ -1,9 +1,8 @@
 export class CookieHelper {
-
   static find(item: string | undefined) {
-    document.cookie
+    return document.cookie
       .split('; ')
       .find((row) => row.startsWith(`${item}=`))
-      ?.split("=")[1];
+      ?.split('=')[1];
   }
 }

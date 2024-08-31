@@ -4,12 +4,19 @@
     "next/core-web-vitals",
     "next",
     "airbnb",
-    "airbnb-typescript"
+    "airbnb-typescript",
+    "plugin:@typescript-eslint/recommended",
+    "eslint:recommended"
   ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
   "parserOptions": {
     "project": "./tsconfig.json"
   },
   "rules": {
+    "no-console": "off",
+    "import/no-cycle": "off",
+    "react/function-component-definition": "off",
     "react/no-unescaped-entities": "off",
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": "off",
@@ -29,6 +36,9 @@
   },
   "ignorePatterns": [
     "node_modules",
-    ".next"
+    ".next",
+    "next.config.js",
+    "**test**",
+    "**.js"
   ]
 }

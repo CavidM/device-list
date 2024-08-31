@@ -1,4 +1,4 @@
-import { HttpRequestError } from "./http-client.type"
+import { HttpRequestError } from './http-client.type';
 
 export interface DeviceProps {
   id?: number

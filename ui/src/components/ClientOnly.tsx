@@ -1,6 +1,12 @@
-import { FC, useEffect, useState } from "react";
+import {
+  FC, ReactNode, useEffect, useState, HTMLAttributes,
+} from 'react';
 
-export const ClientOnly: FC<any> = ({ children, ...rest }) => {
+interface ClientOnlyProps extends HTMLAttributes<HTMLDivElement> {
+  children: ReactNode;
+}
+
+export const ClientOnly: FC<ClientOnlyProps> = ({ children, ...rest }) => {
   const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
@@ -12,4 +18,4 @@ export const ClientOnly: FC<any> = ({ children, ...rest }) => {
   }
 
   return <div {...rest}>{children}</div>;
-}
+};

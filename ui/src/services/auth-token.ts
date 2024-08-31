@@ -1,3 +1,7 @@
-export let authToken: string | null = null
+let authToken: string | null = null;
 
-export const setToken = (token: string) => authToken = token
+export const getToken = () => authToken;
+
+export const setToken = (token: string):void => {
+  authToken = token;
+};

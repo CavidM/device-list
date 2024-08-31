@@ -1,13 +1,9 @@
-import { DeviceCartAdd } from "./DeviceCartAdd"
-import { DeviceCartRemove } from "./DeviceCartRemove"
+import { DeviceCartAdd } from './DeviceCartAdd';
+import { DeviceCartRemove } from './DeviceCartRemove';
 
-
-export const DeviceCart = () => {
-
-  return (
-    <>
-      <DeviceCartAdd />
-      <DeviceCartRemove />
-    </>
-  )
-}
+export const DeviceCart = () => (
+  <>
+    <DeviceCartAdd />
+    <DeviceCartRemove />
+  </>
+);

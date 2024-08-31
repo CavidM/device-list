@@ -1,11 +1,13 @@
 import fetch from 'cross-fetch';
-import { ApolloClient, HttpOptions, InMemoryCache, createHttpLink } from "@apollo/client";
-import { authToken } from "@dl/services/auth-token";
+import {
+  ApolloClient, HttpOptions, InMemoryCache, createHttpLink,
+} from '@apollo/client';
+import { getToken } from '@dl/services/auth-token';
 import { setContext } from '@apollo/client/link/context';
 
 const linkOptions: HttpOptions = {
   uri: 'http://localhost:3001/graphql',
-}
+};
 
 if (process.env.NODE_ENV === 'test') {
   linkOptions.fetch = fetch;
@@ -14,14 +16,14 @@ if (process.env.NODE_ENV === 'test') {
 const httpLink = createHttpLink(linkOptions);
 
 const authLink = setContext((_, { headers }) => {
-  const token = authToken;
+  const token = getToken();
 
   return {
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : "",
-    }
-  }
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
 });
 
 const client = new ApolloClient({
